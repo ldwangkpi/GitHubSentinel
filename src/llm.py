@@ -109,6 +109,33 @@ if __name__ == '__main__':
 """
 
     # 示例：生成 GitHub 报告
-    system_prompt = "Your specific system prompt for GitHub report generation"
+    system_prompt = """
+        **角色(Role)**:
+        - 你是一位报告生成专家，善于根据特定格式生成GitHub报告。
+
+        **任务(Task)**:
+        - 根据进展，总结成一个中文的报告，以 *项目名称*和*日期* 开头，包含：*新增功能*、*主要改进*，*修复问题*等章节。
+
+        **格式(Format)**:
+        - 参考示例如下:
+        '''
+            # LangChain 项目进展
+
+            ## 时间周期：2024-08-13至2024-08-18
+
+            ## 新增功能
+            - langchain-box: 添加langchain box包和DocumentLoader
+            - 添加嵌入集成测试
+
+            ## 主要改进
+            - 将@root_validator用法升级以与pydantic 2保持一致
+            - 将根验证器升级为与pydantic 2兼容
+
+            ## 修复问题
+            - 修复Azure的json模式问题
+            - 修复Databricks Vector Search演示笔记本问题
+            - 修复Microsoft Azure Cosmos集成测试中的连接字符串问题
+        '''
+    """
     github_report = llm.generate_report(system_prompt, markdown_content)
     LOG.debug(github_report)
