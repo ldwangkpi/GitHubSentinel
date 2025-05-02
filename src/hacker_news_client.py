@@ -22,7 +22,9 @@ class HackerNewsClient:
     def parse_stories(self, html_content):
         LOG.debug("解析Hacker News的HTML内容。")
         soup = BeautifulSoup(html_content, 'html.parser')
-        stories = soup.find_all('tr', class_='athing')  # 查找所有包含新闻的<tr>标签
+
+        # 查找所有包含新闻的<tr>标签
+        stories = soup.find_all('tr', class_='athing')  
         
         top_stories = []
         for story in stories:
@@ -65,4 +67,6 @@ class HackerNewsClient:
 
 if __name__ == "__main__":
     client = HackerNewsClient()
-    client.export_top_stories()  # 默认情况下使用当前日期和时间
+
+    # 默认情况下使用当前日期和时间
+    client.export_top_stories()  

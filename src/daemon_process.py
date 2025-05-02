@@ -7,7 +7,7 @@ from datetime import datetime  # 导入 datetime 模块用于获取当前日期
 
 from config import Config  # 导入配置管理类
 from github_client import GitHubClient  # 导入GitHub客户端类，处理GitHub API请求
-from hacker_news_client import HackerNewsClient
+from hacker_news_client import HackerNewsClient #导入HackerNews客户端类，处理HackerNews API请求
 from notifier import Notifier  # 导入通知器类，用于发送通知
 from report_generator import ReportGenerator  # 导入报告生成器类
 from llm import LLM  # 导入语言模型类，可能用于生成报告内容

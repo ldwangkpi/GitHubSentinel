@@ -39,7 +39,7 @@ class ReportGenerator:
 
     def generate_hn_topic_report(self, markdown_file_path):
         """
-        生成 Hacker News 小时主题的报告，并保存为 {original_filename}_topic.md。
+         生成 Hacker News 小时主题的报告，并保存为 {original_filename}_topic.md。
         """
         with open(markdown_file_path, 'r') as file:
             markdown_content = file.read()

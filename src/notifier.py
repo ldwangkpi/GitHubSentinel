@@ -22,9 +22,9 @@ class Notifier:
     
     def notify_hn_report(self, date, report):
         """
-        发送 Hacker News 每日技术趋势报告邮件
-        :param date: 报告日期
-        :param report: 报告内容
+         发送 Hacker News 每日技术趋势报告邮件
+         :param date: 报告日期
+         :param report: 报告内容
         """
         if self.email_settings:
             subject = f"[HackerNews] {date} 技术趋势"
